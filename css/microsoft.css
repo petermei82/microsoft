@@ -1,0 +1,1751 @@
+
+
+
+*{
+    box-sizing: border-box;
+    font-family: 'Segoe UI',SegoeUI,'Microsoft JhengHei',微軟正黑體,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+body ,ul ,h2 ,h3 ,p{ 
+    margin: 0px;
+    padding: 0px;
+}
+
+/* ///////////////////////所有連結////////////////////// */
+
+a{  
+    color: black;
+    text-decoration: none; /*去底線*/
+}
+
+/*////////////////////// 所有清單///////////////////// */
+
+li{ 
+    list-style: none;  /*去清單符號*/
+}
+
+/*/////////////////////// 下拉選單按鈕  /////////////////////////////*/
+label{
+    user-select: none;
+    /* 避免點及下拉選單是被反白 */
+}
+
+/*//////////////////// 所有外容器//////////////////// */
+
+.container{ 
+    max-width: calc(1600px + 10%); /* 外容器最大寬度 */
+    width: 100%;
+    padding: 0 5%; /* 向內推5% */
+    margin: 0 auto;  /* 置中 */
+}
+
+/*///////////////////// 導覽列///////////////////// */
+
+
+/* 導覽列外容器 */
+header .container{ 
+    display: flex; 
+    align-items: center;
+    padding:5px 5.5% 0px;/* 將導覽列下推15px*/
+    font-size: 13px; /* 導覽列字體大小 */
+    position: relative;
+}
+
+/* 導覽列Logo */
+header .container img{ 
+    height: 23px; /* logo高度  */
+    margin-right: 5px; /*將Logo向左推5px*/
+    cursor: pointer;
+}
+
+/* 左側選單 */
+header .container .menu{ 
+    display: flex;
+    margin-right: auto;  /*將登入選單推置右側*/
+    align-items: center; 
+}
+
+/* 左選單各項清單 */
+header .container .menu li{ 
+    margin: 5px; /* 各清單外推5px */
+    
+}
+/* 更多按鈕下拉選單的suface選項 變板時出現 */
+header .container .menu .dropdown-surface{
+    display: none;
+}
+
+/* 左側選單連結  */
+header .container .menu li a{
+    margin-top: 1px;
+    padding: 16px 8px 10px;
+    height: 48px;
+    position: relative;
+}
+/* 左側清單連結點擊邊框效果 */
+header .container .menu li a:active {
+    border: 1px dashed black;
+}
+
+
+/* 更多按鈕 變板時出現 */
+header .container .menu li .more{
+    display: none;
+}
+/* 更多按鈕的下拉選單 */
+header .container .menu li ul{
+    display: flex;
+}
+/* 登入選單*/
+header .container .sign-in-menu{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+
+/* 登入選單各項清單 */
+header .container .sign-in-menu li{ 
+    margin-left: 30px;
+}
+
+
+/* 各項清單的連結 */
+header .container .sign-in-menu li a{
+    padding: 16px 8px 10px;
+}
+
+
+
+/* 所有Microsoft按鈕 */
+header .container .sign-in-menu .all-MS{
+    padding: 16px 10px 16px 15px;
+    margin: 0px;
+    position: relative;
+    /* 幫助子層定位 */
+    cursor: pointer;
+}
+
+
+
+/* 手機版漢堡條 大版不需要所以隱藏 */
+header .container .sign-in-menu .hamburger{
+    display: none;
+    position: relative;
+}
+
+/* input效果的框框 版面不需要所以隱藏 */
+input{
+    display: none;
+}
+/* 所有Microsoft按鈕裡面的下拉選單 */
+header .container .sign-in-menu  .MS-list{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 90%;
+    left: -940px;
+    width: 1230px;
+    flex-wrap: wrap;
+    /* 用換行將網路地圖弄到第二行 */
+    background-color: #f2f2f2;
+    z-index: 2;
+}
+
+/* 所有Microsoft 下拉選單裡所有li */
+header .container .sign-in-menu  .MS-list li{
+    margin: 0px;
+    /* 因為右邊選單有用margin往左推 這裡要歸零 */
+}
+
+/* 所有Microsoft 下拉選單裡各項第一個li(就是各項選單最上面的標題) */
+header .container .sign-in-menu  .MS-list li ul li:first-child {
+    padding: 18px 0 18px 24px;
+    font-weight: 600;
+}
+
+/* 下拉選單旁邊的下箭頭圖示 變版時出現 大版時隱藏 */
+header .container .sign-in-menu  .MS-list li ul li:first-child i{
+    display: none;
+}
+
+/* 所有Microsoft 下拉選單裡除第一項之外的li (就是標題下的選項) */
+header .container .sign-in-menu  .MS-list li ul li:not(:first-child){
+    /* padding: 12px 0 12px 24px; */
+}
+
+/* 最下面的網路地圖 */
+header .container .sign-in-menu  .MS-list>li:last-child{
+    width: 100%;
+    text-align: center;
+    background-color: #e6e6e6;
+    border-bottom:2px solid #000;
+    padding: 0 40%;
+}
+header .container .sign-in-menu  .MS-list>li:last-child a{
+    padding: 12px 0 10px;
+}
+
+/* li裡面的a連結 */
+header .container .sign-in-menu  .MS-list li a{
+    padding: 12px 0 10px 24px;
+    display: block;
+
+    /* 因為右邊選單的連結有用padding撐開 這裡要歸零 */
+}
+
+/* li裡面的a連結點擊樣式 */
+header .container .sign-in-menu  .MS-list li a:active{
+    border: 1px dashed black;
+}
+
+
+/* 所有microsoft下拉選單裡個選項的底線 */
+header .container .sign-in-menu  .MS-list li a:hover{
+    text-decoration: underline;
+}
+
+
+/* ul選單裡的li 除了最後一項『網路地圖』 */
+header .container .sign-in-menu  .MS-list>li:not(:last-child){
+    width: calc(100% / 6);
+}
+/* 左側選單在手機版上會隱藏 在所有microsoft選單裡先藏一個左側選單作為替代  */
+header .container .sign-in-menu  .MS-list .tablet-menu{
+    display: none;
+}
+/* input效果 按下所有microsoft按鈕 下拉選單出現 */
+header .container .sign-in-menu #menu-btn:checked ~ .MS-list{
+    display: flex;
+}
+
+
+header .container .sign-in-menu #menu-btn:checked + label{
+    background-color: #f2f2f2;
+}
+
+
+
+/* 登入連結點擊框線 */
+header .container .sign-in-menu a:active{
+    border: 1px dashed black;
+}
+
+
+/* 登入按鈕 將文字和圖示包起來居中*/
+header .container .sign-in-menu .sign-in-btn{ 
+    display: flex;
+    align-items: center;
+    /* margin: -28px 0; */
+    padding: 5px 2px;
+}
+
+/* 登入圖示 */
+header .container .sign-in-menu .sign-in-btn img{
+    width: 32px;
+    height: 32px;
+    margin-right: 0px; /* 登入圖示右側外框歸零 */
+}
+/* 左側選單的底線 用位元素製成 */
+header .container .underline:hover::before{
+    content: "";
+    position: absolute;
+    top: 80%;
+    left: 8px;
+    width: calc(100% - 16px);
+    height: 2px;
+    background-color: #000;
+}
+/* 所有microsoft按鈕 用來給偽元素定位 */
+header .container .underline-2{
+    position: relative;
+} 
+/* 所有microsoft按鈕的底線 */
+header .container .underline-2:hover::before{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: calc(100% - 16px);
+    height: 2px;
+    background-color: #000;
+}
+
+/* 搜尋和購物車按鈕 幫底線定位 */
+header .container .underline-3{
+    position: relative;
+}
+
+/* 搜尋和購物車按鈕的底線 */
+header .container .underline-3:hover::before{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+}
+header .container .borderline ,header .container .borderline-2{
+    position: relative;
+}
+
+header .container .borderline:focus::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 42px;
+    border: 1px dashed black;
+}
+header .container .borderline-2:focus::after{
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -2%;
+    width: 100%;
+    height: 42px;
+    border: 1px dashed black;
+}
+/*///////////////// suface廣告///////////////////// */
+
+
+/* suface廣告外容器 */
+.main .suface .container{ 
+    display: flex;
+    justify-content: center;
+    padding-top: 0; /* 向下推15px */
+    position: relative; /* 幫內文定位 */
+}
+.swiper {
+    width: 100%;
+    height: 100%;
+
+  }
+.swiper:hover .swiper-button-next{
+    opacity: 1;
+}
+.swiper:hover .swiper-button-prev{
+    opacity: 1;
+}
+.swiper-button-next ,.swiper-button-prev{
+    width: 40px;
+    height: 40px;
+    background-color: rgba(225, 225, 225, 0.5);
+    border-radius: 50%;
+    right: 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    opacity: 0;
+}
+
+
+.swiper-button-next:hover , .swiper-button-prev:hover{
+    box-shadow: 0px 4px 8px rgb(0 0 0 / 20%);
+    background-color: rgba(225, 225, 225, 1);
+}
+
+.swiper-button-prev{
+    left: 0;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after{
+    font-size: 24px;
+    color: #404040;
+}
+
+.swiper-slide {
+    background: #fff;
+    position: relative;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+.swiper-pagination-bullets{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-pagination-bullet-active{
+    background-color: #000;
+}
+.play ,.pause{
+    width: 36px;
+    height: 35px;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pause:hover , .play:hover{
+    background-color: #000;
+    color: white;
+    border: 1px solid white;
+}
+.pause:focus , .play:focus{
+    border: 1px solid #000;
+}
+
+.pause:hover + span{
+    display: block;
+}
+.play:hover + span{
+    display: block;
+}
+.pause-text{
+    display: none;
+    font-size: 15px;
+    padding: 3px 10px 4px;
+    position: absolute;
+    left: calc(50% + 40px);
+    background-color: rgba(255,255,255,.6);
+    border: 1px solid ;
+}
+.none{
+    display: none;
+}
+
+
+/* suface廣告宣傳圖 */
+.main .suface .container img{  
+    width: 100%; /* suface宣傳圖寬設為100% */
+}
+
+/* suface廣告文宣 */
+.main .suface .container .suface-word{ 
+    position: absolute; /* 將suface文宣設為浮出版面 */
+    top: 180px;
+    left: calc(5% + 30px); /* 讓文宣在外容器左側10%再向右加20px */
+    transform: translateY(-50%);
+    width: 520px;
+    height: 200px;
+    color: #000;
+    z-index: 1;
+    /* pointer-events: none; */
+}
+.main .suface .container .microsoft-365{
+    top: 50%;
+}
+
+/* suface廣告黃色標籤 */
+.main .suface .container .suface-word .highlight{
+    padding: 3px 14px 5px;
+    background-color: #ffb900;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* suface廣告文宣標題 */
+.main .suface .container .suface-word h2{
+    font-size: 34px;
+    margin: 0px;
+    font-weight: 600;
+}
+
+/* suface廣告文宣文字 */
+.main .suface .container .suface-word p{
+    font-size: 15px;
+    margin: 15px 0;
+}
+
+/* suface廣告文宣按鈕 */
+.main .suface .container .suface-word button{  
+    width: 118px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    border: 2px solid transparent;
+    position: relative;
+    cursor: pointer;
+}
+.main .suface .container .suface-word .MS365-btn{
+    display: flex;
+}
+.main .suface .container .suface-word .MS365-btn button{
+    width: 185px;
+    height: 40px;
+    margin-right: 20px;
+}
+.main .suface .container .suface-word .MS365-btn .right{
+    background-color: transparent ;
+}
+.main .suface .container .suface-word .MS365-btn .right span{
+    color: #000;
+}
+.main .suface .container .suface-word .MS365-btn .right i{
+    color: #000;
+}
+.main .suface .container .suface-word button:focus::after{
+    content: "";
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #616161;
+}
+
+
+/* hover效果 讓文宣按鈕的文字向右推圖示 */
+.main .suface .container .suface-word button:hover .underline-4{
+    margin-right: 5px;
+}
+/* suface廣告文宣按鈕文字 */
+.main .suface .container .suface-word button span{
+    color: #ffff;
+    position: relative;
+    transition: 100ms;
+}
+
+
+/* suface廣告文宣按鈕圖示 */
+.main .suface .container .suface-word button i{
+    color: #ffff;
+
+}
+
+
+/* 文宣廣告按鈕的文字的底線 */
+
+.main .suface .container .suface-word button span::before{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: calc(100% - 5px);
+    height: 2px;
+    background-color: #ffff;
+    opacity: 0;
+    transition: 500ms;
+
+}
+.main .suface .container .suface-word .MS365-btn .right span::before{
+    background-color: #000;
+}
+
+/* hover效果 讓底線出現 */
+.main .suface .container .suface-word button:hover span::before{
+    opacity: 1;
+}
+
+
+
+/* //////////////////// 微軟主要產品 ///////////////// */
+
+
+/* 外容器 */
+.main .MS-product .container{
+    margin-top: 65px;  /* 向下推65px */
+    display: flex;
+    justify-content: center;
+}
+
+/* 卡片容器 */
+.main .MS-product .container .row{
+    display: flex;
+    align-items: start;
+}
+
+/* 卡片本體 */
+.main .MS-product .container .row .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 184px; /* 可能無效 */
+    min-height: 92px; /* 可能無效 */
+    cursor: pointer;
+   
+}
+/* focus效果 讓卡片點擊時有藍色背景和黑框 */
+.main .MS-product .container .row .card:focus{
+    border: 2px solid #000;
+    background-color: #e5f0f8;
+    margin: -2px 0;
+}
+
+/* 卡片圖片 */
+.main .MS-product .container .row .card img{
+    max-width: 40px;
+    margin: 12px 0 8px;
+}
+
+/* 卡片文字 */
+.main .MS-product .container .row .card .title p{
+    margin: 0px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* 讓左方卡片最底下的文字推一些空間 */
+.main .MS-product .container .row .left .title p:last-child{
+    margin-bottom: 6px;
+}
+
+
+/* 卡片文字底線 */
+.main .MS-product .container .row .card:hover{
+    text-decoration: underline;
+}
+/*//////////////// 微軟產品資訊卡片/////////////// */
+
+
+/* 外容器 */
+.main .product-card .container{
+    margin-top: 65px; /* 向下推65px */
+}
+
+/* 卡片排序 */
+.main .product-card .container .row{
+    display: flex;
+    flex-wrap: wrap;  /* 開啟換行 變版時使用 */
+    margin: 0 -12px;
+   /* 減去兩側卡片的padding 讓兩側卡片對齊上下頁面 */
+}
+
+/* 卡片本體 */
+.main .product-card .container .row>.card{
+    width: 25%;  /* 讓四張卡片塞入一排 變版時需修改 */
+    padding: 0 12px;
+    cursor: pointer;
+    
+}
+
+/* 卡片圖片 */
+.main .product-card .container .row>.card img{
+    width: 100%;
+    margin-bottom: 12px;
+}
+/* hover效果 讓游標移到卡片時圖片變亮 */
+.main .product-card .container .row>.card:hover img{
+    opacity: 0.8;
+}
+
+/* 卡片黃色資訊 */
+.main .product-card .container .row>.card .highlight{
+    padding: 3px 14px 5px;
+    background-color: #ffd800;
+    font-size: 13px;
+}
+
+/* 卡片標題 */
+.main .product-card .container .row>.card h3{
+    margin-top: 37px; /* 將標題向下推37px */
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.main .product-card .container .row>.card .HL{
+    margin-top: 17px;
+    /* 第一和第三張卡片要減去黃色資訊的空間 */
+}
+
+/* 卡片文字 */
+.main .product-card .container .row>.card p{
+    text-align: justify;  /* 文字向兩側對齊 */
+    font-size: 15px;  /* 文字大小為15px */
+    margin-top: 5px; /* 向上推5px */
+}
+
+/* 卡片下方的藍色按鈕 */
+.main .product-card .container .row>.card button{
+    font-size: 15px;
+    color: #0067b8;
+    font-weight: 600;
+    text-align: center;
+    background-color: white;
+    padding: 10px 3px 7px 0px ;
+    border: none;
+    cursor: pointer;
+}
+
+.main .product-card .container .row>.card button:focus{
+    background-color: #e5f0f8;
+    border: 2px solid #000;
+    margin: -2px;
+}
+
+/* 藍色按鈕的文字 幫助底線定位 */
+.main .container .underline-5{
+    position: relative;
+    transition: 100ms;
+}
+
+/* 藍色按鈕的文字底線 */
+.main .container .underline-5::before{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background-color: #0067b8;
+    transition: 500ms;
+    opacity: 0;
+}
+/* hover效果 讓藍色按鈕的文字去推圖示 */
+.main .container .underline-5:hover{
+    padding-right: 5px;
+}
+/* hover效果 讓藍色按鈕的底線出現 */
+.main .container .underline-5:hover::before{
+    opacity: 1;
+}
+
+
+
+ /*/////////////////// OneDirve//////////////// */
+
+ 
+ /* OneDirve外容器 */
+ /* 數值與suface廣告接近 */
+ .main .one-drive .container{
+    margin-top: 65px;
+    position: relative;
+ }
+
+ /* OneDirve宣傳圖 */
+ .main .one-drive .container img{
+    width: 100%;
+    cursor: pointer;
+ }
+
+ /* 宣傳文字 */
+ .main .one-drive .container .one-drive-word{
+     position: absolute;
+     top: 50%;
+     left: calc(10% + 20px); 
+     transform: translateY(-50%);
+
+}
+
+/* 宣傳文字標題 */
+.main .one-drive .container .one-drive-word h2{
+    font-size: 34px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* 宣傳內文 */
+.main .one-drive .container .one-drive-word p{
+    font-size: 15px;
+    margin: 15px 0;
+}
+
+/* 宣傳下方按鈕 */
+.main .one-drive .container .one-drive-word button{
+    width: 118px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black; /* 背景改為黑色 */
+    border: 2px solid transparent;
+    position: relative;
+    cursor: pointer;
+}
+/* hover效果 讓按鈕文字去推圖示 */
+.main .one-drive .container .one-drive-word button:hover .underline-4{
+    margin-right: 5px;
+}
+
+
+
+/* 按鈕文字顏色 */
+.main .one-drive .container .one-drive-word button span{
+    color: #ffff;
+    position: relative;
+    transition: 100ms;
+}
+/* 按鈕圖示顏色 */
+.main .one-drive .container .one-drive-word button i{
+    color: #ffff;
+}
+/* 按鈕文字底線 */
+.main .one-drive .container .one-drive-word button span::before{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: calc(100% - 5px);
+    height: 2px;
+    background-color: #ffff;
+    opacity: 0;
+    transition: 500ms;
+
+}
+/* hover效果 顯示底線 */
+.main .one-drive .container .one-drive-word button:hover span::before{
+    opacity: 1;
+}
+.main .one-drive .container .one-drive-word button:focus::after{
+    content: "";
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #616161;
+}
+
+/*/////////// 商務產品資訊卡片////////// */
+/* 數值與產品卡片類似 */
+
+/* 外容器 */
+.main .for-business .container{
+    margin-top: 50px;  /* 向下推50px 與之前不同 */   
+}
+
+/* 項目標語(適用於商務) 因為格式相近 沒有進行調整 */
+
+/* 卡片排序 */
+.main .for-business .container .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -12px;
+    /* 將卡片兩側的padding減去 與上下對齊 */
+}
+
+/* 卡片本體 */
+.main .for-business .container .row>.card{
+    width: 25%;  /* 寬設定為25% 螢幕大小改變時調整 */
+    padding: 0 12px;
+    cursor: pointer;
+}
+/* 卡片圖片 */
+.main .for-business .container .row>.card img{
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+/* hover效果 讓游標移到卡片上時 圖片變亮 */
+.main .for-business .container .row>.card:hover img{
+    opacity: 0.8;
+}
+
+
+/* 卡片標題 */
+.main .for-business .container .row>.card h3{
+    margin-top: 37px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* 卡片內文 */
+.main .for-business .container .row>.card p{
+    text-align: justify;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+/* 卡片下方按鈕 */
+.main .for-business .container .row>.card button{
+    font-size: 15px;
+    color: #0067b8;
+    font-weight: 600;
+    text-align: center;
+    background-color: white;
+    padding: 10px 3px 7px 0px ;
+    border: none;
+    cursor: pointer;
+}
+.main .for-business .container .row>.card button:focus{
+    background-color: #e5f0f8;
+    border: 2px solid #000;
+    margin: -2px;
+}
+
+
+
+/*//////////////// 關注社群連結 ///////////*/
+
+/* 外容器 */
+.main .social .container{
+    margin-top: 60px;  /* 向下推60px */
+    display: flex;
+    align-items: center;
+}
+/* 關注微軟 */
+.main .social .container span{
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.6);
+    padding-right: 12px; /* 向右推12px */
+}
+
+/* 社群連結 */
+.main .social .container a{
+    width: 28px;
+    height: 28px;
+    /* 寬高訂為28px */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    margin-right: 12px;
+}
+
+.main .social .container a:active{
+    border: 2px solid #000;
+}
+
+/* fb連結 */
+.main .social .container .fb{
+    background-image: url(../img/link/facebook.png);
+}
+
+/* yt連結 */
+.main .social .container .yt{
+    background-image: url(../img/link/youtube.png);
+}
+
+
+/*////////////////// 頁尾 ///////////////////////*/
+footer{
+    background-color: #f2f2f2;
+    margin-top: 60px; /* 向下推60px */
+}
+
+/*/////////////// 頁尾網路地圖 /////////////////////*/
+
+/* 地圖 */
+footer .container .maps{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 各項連結容器 */
+footer .container .maps .link{
+    width: calc(100% / 6);
+    /* 寬度訂為container外容器寬度除與6 方便螢幕大小改變時調整 */
+}
+
+/* 各項連接標語 */
+footer .container .maps .link h4{
+    margin: 0px;
+    padding: 36px 0 4px;
+    /* 向上推36px 向下推4px */
+    color: #616161;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* 各項連接清單 */
+footer .container .maps .link li{
+    padding: 8px 0;
+}
+
+/* 各項連接文字 */
+footer .container .maps .link li a{
+    color: #616161;
+    font-size: 12px;
+    position: relative;
+}
+footer .container .maps .link li a:hover{
+    text-decoration: underline;
+}
+/*//////////////////// 最底部橫條 //////////////////////*/
+
+/* 橫條容器 */
+footer .container .base{
+    height: 72px;
+    display: flex;
+    align-items: center;
+}
+/* 左方語言選項 */
+footer .container .base .language{
+    margin-right: auto;
+    /* 將右側連結推向右邊 */
+}
+/* 左方語言選項連結 */
+footer .container .base .language li a{
+    display: flex;
+    align-items: center;
+}
+/* 右側連結 */
+footer .container .base .right-link{
+    display: flex;
+}
+
+/* 右側連結各項清單 包括最右側的2022文字(因為它沒有連結)*/
+footer .container .base .right-link li{
+    padding-right: 24px;
+    color: #616161;
+    font-size: 12px;
+    /* 顏色和字體大小只影響最右側的2022文字 */
+}
+
+/* 連結內的文字 */
+footer .container .base li a{
+    color: #616161;
+    font-size: 12px;
+    position: relative;
+}
+
+/* 頁尾連結的外框 */
+footer .container a:active::after{
+    content: "";
+    width: calc(100% + 10px);
+    height: calc(100% + 4px);
+    position: absolute;
+    top: -2px;
+    left: -5px;
+    border: 1px dashed #000;
+}
+
+footer .container .base .right-link li a:hover{
+    text-decoration: underline;
+}
+/* 語言選單的地球圖標 */
+footer .container .base li a i{
+    margin: 12px;
+    font-size: 20px;
+}
+footer .container .base li a span:hover{
+    text-decoration: underline;
+}
+
+
+/* /////////////////// 變版 /////////////////// */
+
+
+/* 當寬度為1399px時  */
+
+@media (max-width:1399px) {
+    
+    /*//////////////// 導覽列 //////////////////*/
+    
+    
+    /* 導覽列右側搜尋和購物車按鈕的文字會消失  */
+    
+    /* 文字消失後 圖示太擠 所以向左推10px */
+    header .container .sign-in-menu li {
+        margin-left: 10px;
+    }
+    /* 讓文字消失 */
+    header .container .sign-in-menu li  span:not(.all-MS-word ,.hamburger){
+        display: none;
+    }
+    header .container .sign-in-menu .MS-list li span{
+        display: block;
+    }
+    
+    /*/////////////////// suface廣告 //////////////*/
+    
+    /* Suface廣告的文宣向上移 字體變小 */
+    .main .suface .container .suface-word{
+        top: 140px;
+        width: 440px;
+        height: 190px;
+    }
+    .main .suface .container .microsoft-365{
+        top: 50%;
+    }
+    /* 調整標題字體大小 發現和黃色標語太近 用padding向下推 */
+    .main .suface .container .suface-word h2{
+        font-size: 24px;
+        padding-top: 10px;
+    }
+    .main .suface .container .suface-word .MS365-btn{
+        flex-direction: column;
+        
+    }
+
+    /* /////////////////////// OneDirve ////////////////*/
+    .main .one-drive .container .one-drive-word h2{
+        font-size: 24px;
+
+    }
+}
+
+
+/* 當寬度為1229px時  */
+
+
+
+@media (max-width:1229px) {
+
+    /*//////////////// 導覽列 //////////////////*/
+
+    /* 所有microsoft的下拉選單寬度縮減至1023px 位置重新調整 */
+
+    header .container .sign-in-menu .MS-list{
+        width: 1023px;
+        left: -770px;
+    }
+    /* 下拉選單的項目改為5項為一排 */
+    header .container .sign-in-menu .MS-list>li:not(:last-child){
+        width: calc(100% / 5);
+    }
+}
+
+
+
+
+/* 當寬度為1083px時  */
+
+
+@media (max-width:1083px) {
+
+    /*//////////////// 導覽列 //////////////////*/    
+
+    /* header裡的外容器向內推的距離減至2% (原本是5.5%)  */
+
+    header .container{
+        padding: 5px 2% 0px;
+    }
+
+    /*///////////////// suface廣告 ////////////////*/
+
+    /* suface廣告的外容器內推距離減至0 */
+
+    .main .suface .container{
+        padding: 0;
+    }
+    /* 廣告文字的位置和大小進行調整 */
+    .main .suface .container .suface-word{
+        left: calc(5% + 10px);
+        width: 340px;
+        height: 168px;
+    }
+    /* 左右輪播區寬度調整 */
+    .main .suface .container .carouselBtn{
+        width: 100%;
+    }
+
+    /* /////////////////////////// 產品資訊卡片////////////////////////// */
+
+    /* 因為卡片用padding相互推開 要將推到卡片容器的padding減掉 */
+    .main .product-card .container .row{
+        margin: 0 -12px -50px -12px;
+    }
+
+    /* 卡片由4張一排改為2張一排 用padding推開兩排之間的距離 */
+    .main .product-card .container .row>.card{
+        width: 50%;
+        padding: 0 12px 50px 12px;
+    }
+    
+
+    /*//////////////////////////// OneDirve ///////////////////*/
+
+    /* 讓OneDirve外容器向內推的padding歸零 讓圖片貼齊 */
+    .main .one-drive .container{
+        padding: 0px;
+    }
+
+    /* 調整文字的位置與寬度 */
+    .main .one-drive .container .one-drive-word{
+        left: calc(5% + 10px);
+        width: 340px;
+    }
+    /*/////////////////////////// 商務資訊卡片 ////////////////////*/
+
+    /* 因為卡片用padding相互推開 要將推到卡片容器的padding減掉 */
+    .main .for-business .container .row{
+        margin: 0 -12px -50px -12px;
+    }
+    /* 卡片由4張一排改為2張一排 用padding推開兩排之間的距離 */
+    .main .for-business .container .row>.card{
+        width: 50%;
+        padding: 0 12px 50px 12px;
+    }
+    /*///////////////////////////// 頁尾網路地圖 ////////////////////////*/
+
+    /* 頁尾的外容器內推的距離變為24px */
+    footer .container{
+        padding: 0 24px;
+    }
+    /* 頁尾網路地圖變為3張一排 */
+    footer .container .maps .link{
+        width: calc(100% / 3);
+    }
+
+}
+
+/* 當寬度變為1024px */
+
+
+@media (max-width:1024px) {
+
+
+    /*//////////////// 導覽列 //////////////////*/
+
+    /* 所有microsoft清單寬度與位置調整 */
+    header .container .sign-in-menu .MS-list{
+        width: 818px;
+        left: -660px;
+    }
+
+    /* 所有microsoft清單項目變為4向一排 */
+    header .container .sign-in-menu .MS-list>li:not(:last-child){
+        width: calc(100% / 4);
+    }
+
+
+
+
+}
+
+
+/* // 當寬度變為886px時  */
+
+
+@media (max-width:886px) {
+    
+    /*//////////////// 導覽列 //////////////////*/
+    
+    /* 左側選單的最後兩項會合併為『更多』選// */
+
+    /* 讓更多按鈕出現 原始寬度是隱藏的*/
+    header .container .menu li .more{
+        display: inline;
+        cursor: pointer;
+    }
+
+    /* 更多按鈕內的文字 */
+    header .container .menu li span{
+        margin-top: 1px;
+        padding: 16px 5px 10px 8px;
+        height: 48px;
+        position: relative;
+    }
+
+    /* 更多按鈕的li */
+    header .container .menu li{
+        position: relative;
+    }
+    /* 更多選項下拉選單  */
+    header .container .menu li ul{
+        flex-direction: column;
+        position: absolute;
+        top: 165%;
+        left: 0; 
+        z-index: 1;
+        width: 168px;
+        background-color: #f2f2f2;
+        color: #2e2e2e;
+        border-bottom:2px solid #000 ;
+        display: none;
+        z-index: 2;
+    }
+
+    /* 下拉選單的子項目 */
+    header .container .menu li ul li{
+        margin: 0px;
+    }
+    /* 下拉選單的子項目的連結 */
+    header .container .menu li ul li a{
+        padding: 18px 0px 18px 24px;
+        display: block;
+    }
+
+    /* 隱藏xbox和支援選項的底線效果 */
+    header .container .menu li ul li .list-underilne:hover::before{
+        opacity: 0;
+    }
+    
+    /* hover效果 讓游標移到選項時變色 */
+    header .container .menu li ul li:hover{
+        background-color: #e6e6e6;
+    }
+    /* hover效果 讓游標移到選項時字的底線會出現 */
+    header .container .menu li ul li:hover .list-underilne{
+        background-color: #e6e6e6;
+        text-decoration: underline;
+    }
+
+    /* input效果 讓更多選項的下拉選單出現 */
+    header .container .menu li #more-btn:checked ~ ul{
+        display: block;
+    }
+    
+    /* input效果 讓『更多』按鈕變色 */
+    header .container .menu li #more-btn:checked + label span{
+        background-color: #f2f2f2;
+ 
+    }
+    
+
+
+}
+/* 當寬度變為869px時  */
+@media (max-width:869px) {
+    
+    /*//////////////// 導覽列 //////////////////*/
+    
+    /* 左側選單的Suface連結也會併入更多選單中 */
+
+    /* 將左側選單上的連結隱藏 */
+    header .container .menu .suface-btn {
+        display: none;
+    }
+    /* 將藏在『更多』選單上的連結顯現出來 */
+    header .container .menu li ul .dropdown-surface{
+        display: block;
+    }
+}
+/* 當寬度變為859時 變成手機版導覽列 */
+@media (max-width:859px) {
+
+    /*//////////////// 導覽列 //////////////////*/
+
+    /* 左側LOGO移致中間 */
+    header .container img:first-child{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    /* 左側選單隱藏 */
+    header .container .menu{
+        display: none;
+    }
+    /* 所有microsoft文字隱藏 */
+    header .container .sign-in-menu .all-MS-word {
+        display: none;
+    }
+
+    header .container .sign-in-menu #menu-btn:checked + label{
+        background-color: white;
+    }
+
+    /* 漢堡條出現 */
+    header .container .sign-in-menu .hamburger{
+        display: block;
+    }
+    /* 用偽元素製作漢堡條 */
+    header .container .sign-in-menu .hamburger::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 1px;
+        background-color: #000;
+        transform: translate(-15px ,-5px);
+        box-shadow: 0 5px #000;
+    }
+    header .container .sign-in-menu .hamburger::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 1px;
+        background-color: #000;
+        transform: translate(-15px ,5px);
+    }
+    /* input效果 讓漢堡條點擊時能變成叉號 */
+    header .container .sign-in-menu #menu-btn:checked + label .hamburger::before{
+        transform: translate(-15px ,0px) rotate(45deg);
+        box-shadow: 0 0 #000;
+    } 
+    header .container .sign-in-menu #menu-btn:checked + label .hamburger::after{
+        transform: translate(-15px ,0px) rotate(-45deg);
+    }
+
+
+    /* 讓右側選單出現空間 有便於將按鈕推到右邊 */
+    header .container .sign-in-menu{
+        flex-grow: 1;
+    }
+    /* 搜尋按鈕將購物車按鈕推到右邊 */
+    header .container .sign-in-menu  .search {
+        margin-right: auto;
+    }
+    /* 原本是所有microsoft的下拉選單 現在變成手機版唯一的下拉選單 */
+    header .container .sign-in-menu  .MS-list {
+        width: 105%;
+        top: 100%;
+        left: -2%;
+        /* 讓他變成直行 */
+        flex-direction: column;
+        /* 原本會換行  */
+        flex-wrap: nowrap;
+        /* 原本字體大小為13px */
+        font-size: 15px;
+    }
+
+    /* focus效果 上漢堡條點擊的時候有框線 */
+    header .container .all-MS:focus::after{
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: -8px;
+        width: 32px;
+        height: 35px;
+        border: 2px solid ;
+    }
+
+    /* 除了網路地圖以外的項目 */
+    header .container .sign-in-menu .MS-list>li:not(:last-child){
+        width: 100%;
+        /* 上邊框線 */
+        border-top: 1px solid rgb(230, 230, 230);
+        padding: 0 5px;
+    }
+
+    /* 項目中的所有連結 */
+    header .container .sign-in-menu .MS-list li a{
+        padding: 15px 20px 15px 15px;
+    }
+
+
+    /* 有子選單的母項目 就是『軟體』 『娛樂』那些 */
+    header .container .sign-in-menu  .MS-list li ul li:first-child{
+        padding: 15px 20px 15px 15px;
+        font-weight: normal;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        cursor: pointer;
+    }
+
+    /* 有子選單的母項目 就是『軟體』 『娛樂』那些的 讓他點擊的時候有框線 */
+    header .container .sign-in-menu  .MS-list li ul li:first-child:focus::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(100% - 5px);
+        height: 100%;
+        border: 1px dashed black;
+
+    }
+
+    /* 有子選單母項目右邊的下箭頭圖示 大版為隱藏 現在要把它顯示出來 */
+    header .container .sign-in-menu  .MS-list li ul li:first-child i{
+        display: inline;
+    }
+    header .container .sign-in-menu  .MS-list li ul li:first-child .fa-chevron-up{
+        display: none;
+    }
+
+
+    /* 因為大版中的左側選單已經隱藏 所以所有microsoft選單裡也藏了一個左側選單 現在要把它顯示出來 */
+    header .container .sign-in-menu  .MS-list  .tablet-menu{
+        display: block;
+        /* padding: 15px 0 15px 15px; */
+    }
+
+    
+    /* 子選單的項目 */
+    header .container .sign-in-menu  .MS-list li ul li:not(:first-child){
+        padding: 0px 5px 0px 40px;
+    }
+
+    /* 子項目的連結 */
+    header .container .sign-in-menu  .MS-list li ul li a{
+        padding: 15px 0 15px 5px;
+    }
+
+    /* 下拉選單的span被汙染而隱藏起來 現在把它顯示出來 */
+    header .container .sign-in-menu  .MS-list li span{
+        display: inline;
+    }
+
+    /* /////// 以下為子選單 以及他們的input效果 ///////////////////*/
+
+    /* 『軟體』子選單 先把它隱藏 */
+    header .container .sign-in-menu  .MS-list .software {
+        display: none;
+        /*  幫偽元素定位 */
+        position: relative;
+    }
+    
+    /* input效果 讓母項目點擊後出現邊底線 */
+
+    header .container .sign-in-menu  .MS-list input:checked + label li{
+        border-bottom: 1px solid rgb(230, 230, 230);
+
+    }
+
+    /* input效果 讓母選項的下箭頭隱藏 */
+    header .container .sign-in-menu  .MS-list input:checked + label li i{
+        display: none;
+    }
+
+    /* input效果 讓母選項的上箭頭出現 */
+    header .container .sign-in-menu  .MS-list input:checked + label li .fa-chevron-up{
+        display: inline;
+    }
+
+    /* input效果 讓『軟體』母項目點擊時子項目能顯現出來 */
+
+
+   
+
+    header .container .sign-in-menu  .MS-list #software-btn:checked ~ .software{
+        display: block;
+    }
+
+    header .container .sign-in-menu  .MS-list .PC{
+        display: none;
+        position: relative;
+    }
+    header .container .sign-in-menu  .MS-list #PC-btn:checked ~ .PC{
+        display: block;
+    }
+    header .container .sign-in-menu  .MS-list .entertainment{
+        display: none;
+        position: relative;
+    }
+    header .container .sign-in-menu  .MS-list #entertainment-btn:checked ~ .entertainment{
+        display: block;
+    }
+    header .container .sign-in-menu  .MS-list .business{
+        display: none;
+        position: relative;
+    }
+    header .container .sign-in-menu  .MS-list #business-btn:checked ~ .business{
+        display: block;
+    }
+    header .container .sign-in-menu  .MS-list .developer{
+        display: none;
+        position: relative;
+    }
+
+    header .container .sign-in-menu  .MS-list #developer-btn:checked ~ .developer{
+        display: block;
+    }
+    header .container .sign-in-menu  .MS-list .other{
+        display: none;
+        position: relative;
+    }
+    header .container .sign-in-menu  .MS-list #other-btn:checked ~ .other{
+        display: block;
+    }
+    
+    /* 子選單的偽元素 提供邊線效果 */
+    header .container .sign-in-menu  .MS-list .btn-underline::before{
+        content: "";
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: calc(100% - 30px);
+        height: 1px;
+        background-color: rgb(230, 230, 230);
+    }
+
+    
+    /*//////////////////// 到這裡結束 /////////////////////////*/
+    
+
+    /* 網路地圖項目 */
+    header .container .sign-in-menu .MS-list>li:last-child{
+        text-align: left;
+        padding:  0 5px;
+        background-color: #f2f2f2;
+        border-top: 1px solid rgb(230, 230, 230);
+    }
+    header .container .sign-in-menu .MS-list>li:last-child a{
+        padding: 15px 20px 15px 15px ;
+        text-align: left;
+    }
+    /* 網路地圖項目的箭頭圖示 */
+    header .container .sign-in-menu .MS-list>li:last-child i{
+        display: none;
+    }
+    header .container .sign-in-menu .MS-list li a:hover{
+        text-decoration: none;
+    }
+}
+/* 當寬度變成767px時 */
+
+
+@media (max-width:767px){
+
+    /* /////////////suface廣告 /////////////// */
+
+    /* 外容器flex的方向改為直行 置中對齊 改被景色 */
+    .main .suface .container{
+        flex-direction: column;
+        align-items: center;
+        background-color: #e6e6e6;
+    }
+
+    /* 取消position效果 用flex將裡面的原去置中 用padding從左右往內推50px */
+    .main .suface .container .suface-word{
+        position: static;
+        transform: none;
+        width: 100%;
+        height: 270px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 50px 0;
+        text-align: center;
+        background-color: #e6e6e6;
+    }
+    .main .suface .container .suface-word .MS365-btn{
+        flex-direction: row;
+    }
+    /* 改標題字體大小 */
+    .main .suface .container .suface-word h2{
+        font-size: 20px;
+    }
+    /* 取消輪播圖示的position效果 */
+    .main .suface .container .carousel{
+        position: static;
+
+    }
+    /* 左右輪播圖示外容器高度調整 */
+    .main .suface .container .carouselBtn{
+        height: calc(100% - 310px);
+    }
+    /* //////////////////// 主要產品 ////////////////////////*/
+    
+    /* 讓主要產品的卡片容器靠左 */
+    .main .MS-product .container{
+        justify-content: left;
+    }
+
+    /* 消除原本的flex效果 */
+    .main .MS-product .container .row{
+        display: block;
+    }
+
+    /* 將卡片內flex效果的主軸轉為左向右 */
+    .main .MS-product .container .row .card{
+        flex-direction: row;
+        min-height: 50px;
+    }
+
+    /* 讓Microsoft365的文字flex 使他們變成一行 */
+    .main .MS-product .container .row .left .title{
+        display: flex;
+    }
+    /* 調整圖片的大小和位置 */
+    .main .MS-product .container .row .card img {
+        max-width: 20px;
+        margin: 0 10px 0;
+    }
+    .main .MS-product .container .row .left .title p:last-child{
+        margin: 0px 10px 0px 0px;
+    }
+
+    /* //////////////////產品資訊卡片 ///////////////// */
+    /* 卡片標題會與黃色標籤貼齊 */
+    .main .product-card .container .row>.card h3{
+        margin-top: 0px;
+    }
+/* ////////////////////////OneDirve ///////////////////////// */
+
+    /* OneDirve外容器 將flex主軸轉為直向 */
+    .main .one-drive .container{
+        flex-direction: column;
+        align-items: center;
+        background-color: #e6e6e6;
+    }
+
+    /* OneDirve文字 讓他們掉下來 */
+    .main .one-drive .container .one-drive-word{
+        position: static;
+        transform: none;
+        width: 100%;
+        height: 270px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 50px 0;
+        text-align: center;
+    }
+    /* OneDirve文字標題大小 */
+    .main .one-drive .container .one-drive-word h2{
+        font-size: 20px;
+    }
+    /*///////////////////////// 商務產品資訊卡片 ///////////////////////*/
+    
+    /* 卡片標題會與黃色標籤貼齊 */
+    .main .for-business .container .row>.card h3{
+        margin-top: 0px;
+    }
+
+    /* //////////////////// 最底部橫條 //////////////////////// */
+
+    /* 橫條高度調整 flex主軸轉為直向 靠左 上下置中 */
+    footer .container .base{
+        height: 107px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    /* 讓原本在右邊的連結換行 */
+    footer .container .base .right-link{
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    /* 改變原本在右邊的連結padding */
+    footer .container .base .right-link li{
+        padding: 6px 4px 0 6px;
+    }
+    /* 將地球圖示左邊的margin歸零 讓它和上方對齊 */
+    footer .container .base li a i{
+        margin: 12px 12px 12px 0;
+    }
+
+}
+
+/* 當寬度為539時 */
+
+@media (max-width:539px){
+
+    /* //////////////////產品資訊卡片 ///////////////// */
+
+    .main .product-card .container .row>.card{
+        width: 100%;
+    }
+
+    /* ///////////////////商務產品資訊卡片 //////////////////////////// */
+    
+    .main .for-business .container .row>.card{
+        width: 100%;
+    }
+
+    /*///////////////////// 頁尾網路地圖 //////////////////////*/
+    footer .container .maps .link{
+        width: 100%;
+    }
+    /* //////////////////// 最底部橫條 //////////////////////// */
+    footer .container .base .right-link li{
+        padding: 6px 10px 0 0;
+    }
+
+}
+@media (max-width:436px){
+    .main .suface .container .suface-word .MS365-btn{
+        flex-direction: column;
+    }
+    .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+        bottom: 0;
+    }
+}
